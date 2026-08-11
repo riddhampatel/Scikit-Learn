@@ -1,9 +1,6 @@
 """
 DAY 03 ACTIVE RECALL CHALLENGE: Scikit-learn API & Dataset Workflow
 
-Instructions:
-Complete the tasks below by filling in your own code where indicated with TODO.
-Run this file to verify your solution!
 """
 
 import numpy as np
