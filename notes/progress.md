@@ -3,7 +3,7 @@
 | Day | Phase | Topic | Theory | Practice | Challenge | Status |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- |
 | **01** | 00_foundations | Python for ML Fundamentals | ✅ | ✅ | ✅ | **Complete** |
-| **02** | 00_foundations | Data Science Foundation (NumPy, Pandas, Math) | ⬜ | ⬜ | ⬜ | Not Started |
+| **02** | 00_foundations | Data Science Foundation (NumPy, Pandas, Math) | ✅ | ✅ | ✅ | **Complete** |
 | **03** | 01_core_ml | What is Scikit-learn & Estimator API | ⬜ | ⬜ | ⬜ | Not Started |
 | **04** | 01_core_ml | Train/Test Split & Data Leakage | ⬜ | ⬜ | ⬜ | Not Started |
 | **05** | 01_core_ml | Linear Regression Baseline | ⬜ | ⬜ | ⬜ | Not Started |
