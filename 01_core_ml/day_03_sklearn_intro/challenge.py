@@ -17,7 +17,12 @@ from sklearn.neighbors import KNeighborsClassifier
 # 3. Print the shape of `X`, shape of `y`, and target class names
 
 # TODO: Load dataset, extract X and y, and print their shapes & target names
-
+wine = load_wine()
+X = wine.data
+y = wine.target
+print("X  .shape:", X.shape)
+print("y.shape:", y.shape)
+print("wine.target_names:", wine.target_names)
 
 
 
@@ -32,10 +37,10 @@ from sklearn.neighbors import KNeighborsClassifier
 # 4. Print the mean of feature 0 after scaling (should be close to 0)
 
 # TODO: Create scaler, fit & transform X, and print the mean of X_scaled[:, 0]
-
-
-
-
+scaler = StandardScaler()
+scaler.fit(X)
+X_scaled = scaler.transform(X)
+print("Mean of feature 0:", X_scaled[:, 0].mean())
 
 
 # ===================================================================
@@ -47,3 +52,12 @@ from sklearn.neighbors import KNeighborsClassifier
 # 4. Print the overall training accuracy using `model.score(X_scaled, y)`
 
 # TODO: Instantiate model, fit on X_scaled and y, predict sample #0, and print score
+model = KNeighborsClassifier(n_neighbors=5)
+model.fit(X_scaled, y)
+prediction = model.predict(X_scaled[0:1])
+
+print("Predicted class:", prediction[0])
+print("Actual class:", y[0])
+accuracy = model.score(X_scaled, y)
+
+print("Training Accuracy:", accuracy)
