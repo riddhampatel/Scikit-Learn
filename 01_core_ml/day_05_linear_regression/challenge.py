@@ -19,8 +19,15 @@ from sklearn.linear_model import LinearRegression
 
 # TODO: Load dataset, split 80/20, and scale features cleanly
 
+diabetes = load_diabetes()
+X = diabetes.data
+y = diabetes.target
 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+scale = StandardScaler()  
+X_train_scaled = scale.fit_transform(X_train)
+X_test_scaled = scale.transform(X_test)
 
 
 
@@ -33,6 +40,10 @@ from sklearn.linear_model import LinearRegression
 # 4. Print the fitted model `coef_` (feature weights array)
 
 # TODO: Instantiate LinearRegression, fit on train set, and print intercept & coefficients
+model = LinearRegression()
+model.fit(X_train_scaled, y_train)
+print("Intercept:", model.intercept_)
+print("Coefficients:", model.coef_)
 
 
 
@@ -48,3 +59,16 @@ from sklearn.linear_model import LinearRegression
 # 4. Compute and print Testing R² score using `model.score(X_test_scaled, y_test)`
 
 # TODO: Predict on test set, compute residuals, and print train/test R^2 scores
+
+y_pred = model.predict(X_test_scaled)
+
+residuals = y_test - y_pred
+
+print("Mean Residual:", np.mean(residuals))
+train_r2 = model.score(X_train_scaled, y_train)
+
+print("Training R²:", train_r2)
+
+test_r2 = model.score(X_test_scaled, y_test)
+
+print("Testing R²:", test_r2)
