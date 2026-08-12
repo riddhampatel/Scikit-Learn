@@ -23,7 +23,16 @@ from sklearn.neighbors import KNeighborsClassifier
 # TODO: Load dataset and perform 75/25 stratified split
 
 
+cancer = load_breast_cancer()
+X = cancer.data
+y = cancer.target
 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
+
+print("Shape of X_train:", X_train.shape)
+print("Shape of X_test:", X_test.shape)
+print("Shape of y_train:", y_train.shape)
+print("Shape of y_test:", y_test.shape)
 
 
 
@@ -37,7 +46,12 @@ from sklearn.neighbors import KNeighborsClassifier
 
 # TODO: Fit scaler on training set, transform train & test sets, and print feature 0 means
 
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
 
+print("Mean of feature 0 in X_train_scaled:", X_train_scaled[:, 0].mean())
+print("Mean of feature 0 in X_test_scaled:", X_test_scaled[:, 0].mean())
 
 
 
@@ -51,3 +65,9 @@ from sklearn.neighbors import KNeighborsClassifier
 # 4. Compute and print testing accuracy using `.score(X_test_scaled, y_test)`
 
 # TODO: Fit classifier on training set, evaluate and print train and test scores
+
+model = KNeighborsClassifier(n_neighbors=7)
+model.fit(X_train_scaled, y_train)
+
+print("Training Accuracy:", model.score(X_train_scaled, y_train))
+print("Testing Accuracy:", model.score(X_test_scaled, y_test))
