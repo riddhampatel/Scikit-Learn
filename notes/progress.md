@@ -5,8 +5,8 @@
 | **01** | 00_foundations | Python for ML Fundamentals | ✅ | ✅ | ✅ | **Complete** |
 | **02** | 00_foundations | Data Science Foundation (NumPy, Pandas, Math) | ✅ | ✅ | ✅ | **Complete** |
 | **03** | 01_core_ml | What is Scikit-learn & Estimator API | ✅ | ✅ | ✅ | **Complete** |
-| **04** | 01_core_ml | Train/Test Split & Data Leakage | ✅ | ✅ | ⬜ | **In Progress** |
-| **05** | 01_core_ml | Linear Regression Baseline | ⬜ | ⬜ | ⬜ | Not Started |
+| **04** | 01_core_ml | Train/Test Split & Data Leakage | ✅ | ✅ | ✅ | **Complete** |
+| **05** | 01_core_ml | Linear Regression Baseline | ✅ | ✅ | ⬜ | **In Progress** |
 | **06** | 01_core_ml | Regression Evaluation Metrics (MAE, MSE, RMSE, R²) | ⬜ | ⬜ | ⬜ | Not Started |
 | **07** | 01_core_ml | Polynomial Regression & Overfitting | ⬜ | ⬜ | ⬜ | Not Started |
 | **08** | 01_core_ml | Ridge Regression (L2 Regularization) | ⬜ | ⬜ | ⬜ | Not Started |
