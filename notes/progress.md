@@ -7,8 +7,8 @@
 | **03** | 01_core_ml | What is Scikit-learn & Estimator API | ✅ | ✅ | ✅ | **Complete** |
 | **04** | 01_core_ml | Train/Test Split & Data Leakage | ✅ | ✅ | ✅ | **Complete** |
 | **05** | 01_core_ml | Linear Regression Baseline | ✅ | ✅ | ✅ | **Complete** |
-| **06** | 01_core_ml | Regression Evaluation Metrics (MAE, MSE, RMSE, R²) | ✅ | ✅ | ⬜ | **In Progress** |
-| **07** | 01_core_ml | Polynomial Regression & Overfitting | ⬜ | ⬜ | ⬜ | Not Started |
+| **06** | 01_core_ml | Regression Evaluation Metrics (MAE, MSE, RMSE, R²) | ✅ | ✅ | ✅ | **Complete** |
+| **07** | 01_core_ml | Polynomial Regression & Overfitting | ✅ | ✅ | ⬜ | **In Progress** |
 | **08** | 01_core_ml | Ridge Regression (L2 Regularization) | ⬜ | ⬜ | ⬜ | Not Started |
 | **09** | 01_core_ml | Lasso Regression (L1 Regularization) | ⬜ | ⬜ | ⬜ | Not Started |
 | **10** | 01_core_ml | Logistic Regression (Binary Classification) | ⬜ | ⬜ | ⬜ | Not Started |
