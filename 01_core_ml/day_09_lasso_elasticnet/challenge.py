@@ -21,11 +21,13 @@ from sklearn.metrics import r2_score, root_mean_squared_error
 # TASK 1: Dataset Generation & Train/Test Split
 # ===================================================================
 
+# pyrefly: ignore [bad-unpacking]
 X, y = make_regression(
     n_samples=150,
     n_features=30,
     n_informative=5,
     noise=12.0,
+    coef=False,
     random_state=42
 )
 
