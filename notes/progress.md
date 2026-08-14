@@ -9,6 +9,6 @@
 | **05** | 01_core_ml | Linear Regression Baseline | ✅ | ✅ | ✅ | **Complete** |
 | **06** | 01_core_ml | Regression Evaluation Metrics (MAE, MSE, RMSE, R²) | ✅ | ✅ | ✅ | **Complete** |
 | **07** | 01_core_ml | Polynomial Regression & Overfitting | ✅ | ✅ | ✅ | **Complete** |
-| **08** | 01_core_ml | Ridge Regression (L2 Regularization) | ⬜ | ⬜ | ⬜ | Not Started |
-| **09** | 01_core_ml | Lasso Regression (L1 Regularization) | ⬜ | ⬜ | ⬜ | Not Started |
-| **10** | 01_core_ml | Logistic Regression (Binary Classification) | ⬜ | ⬜ | ⬜ | Not Started |
+| **08** | 01_core_ml | Ridge Regression (L2 Regularization) | ✅ | ✅ | ✅ | **Complete** |
+| **09** | 01_core_ml | Lasso Regression & ElasticNet | ✅ | ✅ | ✅ | **Complete** |
+| **10** | 01_core_ml | Logistic Regression (Binary Classification) | ✅ | ✅ | ✅ | **Complete** |
