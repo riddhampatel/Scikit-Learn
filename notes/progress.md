@@ -12,3 +12,6 @@
 | **08** | 01_core_ml | Ridge Regression (L2 Regularization) | ✅ | ✅ | ✅ | **Complete** |
 | **09** | 01_core_ml | Lasso Regression & ElasticNet | ✅ | ✅ | ✅ | **Complete** |
 | **10** | 01_core_ml | Logistic Regression (Binary Classification) | ✅ | ✅ | ✅ | **Complete** |
+| **11** | 01_core_ml | Classification Metrics (Precision, Recall, F1, ROC-AUC) | ✅ | ✅ | ✅ | **Complete** |
+
+
