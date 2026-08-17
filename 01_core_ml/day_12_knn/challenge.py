@@ -15,44 +15,36 @@ from sklearn.metrics import accuracy_score, classification_report, mean_squared_
 # TASK 1: Load Dataset & Train/Test Split
 # ===================================================================
 
-# TODO: Load the Wine dataset using load_wine()
-data = None
-X = None
-y = None
+data = load_wine()
+X = data.data
+y = data.target
 
-# TODO: Perform an 80/20 train/test split with random_state=42 and stratify=y
-X_train, X_test, y_train, y_test = None, None, None, None
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
 
 
 # ===================================================================
 # TASK 2: Feature Scaling
 # ===================================================================
 
-# TODO: Instantiate StandardScaler
-scaler = None
+scaler = StandardScaler()
 
-# TODO: Fit scaler ONLY on X_train and transform X_train
-X_train_scaled = None
-
-# TODO: Transform X_test using the fitted scaler
-X_test_scaled = None
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
 
 
 # ===================================================================
 # TASK 3: Fit KNeighborsClassifier & Evaluate
 # ===================================================================
 
-# TODO: Instantiate KNeighborsClassifier with n_neighbors=5
-model = None
+model = KNeighborsClassifier(n_neighbors=5)
 
-# TODO: Fit the model on X_train_scaled and y_train
+model.fit(X_train_scaled, y_train)
 
+y_pred = model.predict(X_test_scaled)
 
-# TODO: Predict class labels for X_test_scaled
-y_pred = None
-
-# TODO: Calculate accuracy score on test set
-accuracy = None
+accuracy = accuracy_score(y_test, y_pred)
 
 print("=" * 60)
 print("k-NN CLASSIFIER RESULTS (SCALED)")
@@ -64,15 +56,13 @@ print(f"Test Accuracy: {accuracy}")
 # TASK 4: Feature Scaling Impact Comparison
 # ===================================================================
 
-# TODO: Instantiate and fit a KNeighborsClassifier(n_neighbors=5) on UNSCALED X_train
-model_unscaled = None
+model_unscaled = KNeighborsClassifier(n_neighbors=5)
 
+model_unscaled.fit(X_train, y_train)
 
-# TODO: Predict on UNSCALED X_test
-y_pred_unscaled = None
+y_pred_unscaled = model_unscaled.predict(X_test)
 
-# TODO: Calculate accuracy score on UNSCALED test set
-accuracy_unscaled = None
+accuracy_unscaled = accuracy_score(y_test, y_pred_unscaled)
 
 print("\n" + "=" * 60)
 print("FEATURE SCALING COMPARISON")
@@ -92,15 +82,21 @@ print("EXPERIMENTING WITH k (n_neighbors)")
 print("=" * 60)
 
 for k in k_values:
-    # TODO: Instantiate KNeighborsClassifier with n_neighbors=k
-    knn_k = None
-    
-    # TODO: Fit on X_train_scaled
-    
-    # TODO: Calculate training accuracy and test accuracy
-    train_acc = None
-    test_acc = None
-    
+
+    knn_k = KNeighborsClassifier(n_neighbors=k)
+
+    knn_k.fit(X_train_scaled, y_train)
+
+    train_acc = accuracy_score(
+        y_train,
+        knn_k.predict(X_train_scaled)
+    )
+
+    test_acc = accuracy_score(
+        y_test,
+        knn_k.predict(X_test_scaled)
+    )
+
     print(f"k={k:<3} | Train Accuracy: {train_acc} | Test Accuracy: {test_acc}")
 
 
@@ -108,7 +104,6 @@ for k in k_values:
 # TASK 6: k-NN Regression (KNeighborsRegressor)
 # ===================================================================
 
-# Load Diabetes dataset
 diabetes = load_diabetes()
 X_reg, y_reg = diabetes.data, diabetes.target
 
@@ -116,23 +111,22 @@ X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(
     X_reg, y_reg, test_size=0.2, random_state=42
 )
 
-# TODO: Scale diabetes features using StandardScaler
-scaler_r = None
-X_train_r_scaled = None
-X_test_r_scaled = None
+scaler_r = StandardScaler()
 
-# TODO: Instantiate KNeighborsRegressor with n_neighbors=5 and weights='distance'
-knn_reg = None
+X_train_r_scaled = scaler_r.fit_transform(X_train_r)
+X_test_r_scaled = scaler_r.transform(X_test_r)
 
-# TODO: Fit regressor on scaled training data
+knn_reg = KNeighborsRegressor(
+    n_neighbors=5,
+    weights="distance"
+)
 
+knn_reg.fit(X_train_r_scaled, y_train_r)
 
-# TODO: Predict on scaled test data
-y_pred_r = None
+y_pred_r = knn_reg.predict(X_test_r_scaled)
 
-# TODO: Calculate RMSE and R2 score
-rmse = None
-r2 = None
+rmse = np.sqrt(mean_squared_error(y_test_r, y_pred_r))
+r2 = r2_score(y_test_r, y_pred_r)
 
 print("\n" + "=" * 60)
 print("k-NN REGRESSOR RESULTS")
