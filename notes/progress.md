@@ -13,5 +13,5 @@
 | **09** | 01_core_ml | Lasso Regression & ElasticNet | ✅ | ✅ | ✅ | **Complete** |
 | **10** | 01_core_ml | Logistic Regression (Binary Classification) | ✅ | ✅ | ✅ | **Complete** |
 | **11** | 01_core_ml | Classification Metrics (Precision, Recall, F1, ROC-AUC) | ✅ | ✅ | ✅ | **Complete** |
-
-
+| **12** | 01_core_ml | k-Nearest Neighbors (k-NN Classifier & Regressor) | ✅ | ✅ | ✅ | **Complete** |
+| **13** | 01_core_ml | Naive Bayes Classifier (GaussianNB, MultinomialNB, etc.) | ✅ | ✅ | ✅ | **Complete** |
